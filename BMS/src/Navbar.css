@@ -1,0 +1,198 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+/* Desktop Navbar - Visible only on larger screens */
+.fnav,
+.sec-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+    color: #fff;
+    background-color: rgb(42, 42, 68);
+}
+
+/* fnav Left Section */
+.fnav .left {
+    display: flex;
+    margin-top: -10px;
+}
+
+.left img {
+    width: 19%;
+}
+
+.left input {
+    margin-inline: 11px;
+    width: 520px;
+    height: 39px;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin-top: 18px;
+    border-radius: 2px;
+}
+
+/* fnav Right Section */
+.fnav .right {
+    display: flex;
+    margin-top: 13px;
+}
+
+.right #drop {
+    margin-inline: 22px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    margin-bottom: 0.7em;
+}
+
+.right #drop option {
+    color: black;
+}
+
+.right button {
+    margin-inline: 22px;
+    padding-top: 3px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: rgb(225, 57, 85);
+    cursor: pointer;
+}
+
+.right i {
+    margin-inline: 22px;
+    font-size: 22px;
+}
+
+/* sec-nav */
+.sec-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(245, 245, 245);
+    color: black;
+    padding: 10px 10px;
+}
+
+.sec-nav .s-left {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sec-nav .s-right {
+    display: flex;
+}
+
+.s-left p {
+    padding-left: 0.8em;
+    cursor: pointer;
+}
+
+.s-right p {
+    padding-right: 0.8em;
+    cursor: pointer;
+}
+
+/* Mobile Navbar - Visible only on mobile screens */
+@media (max-width: 430px) {
+  .Nav2,
+  .Snav {
+      display: block;
+  }
+
+  .fnav,
+  .sec-nav {
+      display: none;
+      position: fixed;
+  }
+}
+
+
+.Nav2 {
+    background-color: #f8f9fc;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+/* Mnav */
+.Mnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    background-image: url("/bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 45px;
+}
+
+/* Mnav Heading */
+.Mnav h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1c1c1c;
+    margin-top: 1px;
+    margin-right: -20px;
+}
+
+.left-section h1 span {
+    color: #e63946;
+    font-size: 13px;
+}
+
+/* Right Section of Mnav */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.notification, .scan {
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Snav */
+.Snav {
+    margin: 1px 6px -5px 0px;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: none;
+}
+
+.Snav img {
+    width: 5em;
+}
+
+/* Desktop Navbar - Visible only on larger screens */
+@media (min-width: 431px) {
+  .fnav,
+  .sec-nav {
+      display: flex;
+  }
+
+  .Nav2,
+  .Snav {
+      display: none;
+      
+  }
+}
+
+
+
+  

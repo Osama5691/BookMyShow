@@ -1,0 +1,237 @@
+/* Footer Css For Desktop view */
+
+/* Footer Styling */
+.footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px 50px;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Section */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.footer-top p {
+  font-size: 14px;
+}
+
+.highlight {
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+.contact-btn {
+  background-color: #ff4d6d;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.contact-btn:hover {
+  background-color: #ff2a4d;
+}
+
+/* Middle Section */
+.footer-middle {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.footer-bottom h3 {
+  font-size: 14px;
+  color: #bfbfbf;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.footer-bottom p {
+  /* font-size: 12px; */
+  color: #888;
+}
+
+.footer-bottom h3 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #bbb;
+  margin: 18px 0;
+}
+.social-media {
+  display: flex;
+  margin-top: 60px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #444;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #888;
+  padding-top: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+/* Media Queries for Responsive Design */
+/* @media (max-width: 430px) {
+  
+  .footer {
+    padding: 15px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-top p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-item {
+    margin-bottom: 15px;
+  }
+
+  .footer-bottom h3 {
+    font-size: 14px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .social-media {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+} */
+
+
+
+/* This is my mobile footer Css */
+/* Hide both by default */
+.desktop-footer {
+  display: none;
+}
+
+.mobile-footer-wrapper {
+  display: none;
+}
+
+/* Show full desktop footer on larger screens */
+@media (min-width: 431px) {
+  .desktop-footer {
+    display: block;
+  }
+}
+
+/* Show mobile footer ONLY on max 430px screens */
+@media (max-width: 430px) {
+  .mobile-footer-wrapper {
+    display: block;
+  }
+
+  .mobile-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white; /* White footer background */
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
+  
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: rgb(7, 7, 7); /* default gray color */
+    cursor: pointer;
+  }
+  
+  .footer-item .icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: rgb(62, 61, 61);
+  }
+  
+  .footer-item.active {
+    color: #e50914; /* only text color red */
+  }
+  
+  .footer-item.active .icon {
+    color: #e50914; /* only icon color red */
+  }
+}
+
