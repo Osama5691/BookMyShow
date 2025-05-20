@@ -1,0 +1,224 @@
+.booking-container {
+  width: 90%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.theater-section {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  background-color: #fff;
+  /* optional for clarity */
+}
+
+.theater-left {
+  flex: 1.6;
+  min-width: 250px;
+}
+
+.theater-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.heart-icon {
+  color: #999;
+  width: 50px;
+  cursor: pointer;
+}
+
+.info-icon {
+  color: #888;
+  margin-right: 10px;
+  margin-top: 30px;
+}
+
+.cancellation-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.theater-right {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.time-card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  text-align: center;
+  width: 110px;
+  transition: 0.2s ease;
+}
+
+.time-card:hover {
+  background-color: #f0f0f0;
+}
+
+.time {
+  font-size: 15px;
+  font-weight: bold;
+  color: #059669;
+}
+
+.format {
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.lower{
+  display: none;
+}
+
+
+/* Media Queries Section ...................................... */
+
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .booking-container {
+    width: 95%;
+    margin-top: 10px; /* Was 240px - reduce */
+    padding: 0 10px;
+  }
+
+  .theater-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    /* margin-top: -100px; */
+  }
+
+  .theater-left {
+    min-width: 100%;
+  }
+
+  .theater-title {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .cancellation-text {
+    font-size: 13px;
+  }
+
+  .theater-right {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .time-card {
+    width: 95px;
+    padding: 6px 10px;
+  }
+
+  .time {
+    font-size: 14px;
+  }
+
+  .format {
+    font-size: 11px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .booking-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto 0 auto; /* Was 260px - reduce */
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .theater-title {
+    font-size: 15px;
+  }
+
+  .heart-icon {
+    width: 40px;
+  }
+
+  .info-icon {
+    margin-top: 20px;
+  }
+
+  .time-card {
+    width: 85px;
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .time {
+    font-size: 13px;
+  }
+
+  .format {
+    font-size: 10px;
+  }
+
+  .lower {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid rgb(229, 229, 229);
+  padding: 10px 16px;
+  box-sizing: border-box;
+  z-index: 999; /* make sure it stays on top */
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
+.left h5 {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.left span {
+  font-size: 20px;
+  color: red;
+}
+
+.left button {
+  background: transparent;
+  border: none;
+  color: red;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+}

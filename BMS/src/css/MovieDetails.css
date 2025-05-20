@@ -1,0 +1,1109 @@
+/* MovieDetails.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* .movie-detail-container {
+    background: url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/final-destination-bloodlines-et00432143-1746683831.jpg') no-repeat center center/cover;
+    height: 80vh;
+    position: relative;
+    color: #fff;
+    margin-bottom: 10px;
+  } */
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 96%;
+    display: flex;
+    align-items: center;
+    padding: 10px 60px;
+    
+  }
+  
+  .left-panel {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .poster-card {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .poster-img {
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+  
+  .trailer-btn {
+    position: absolute;
+    top: 170px;
+    left: 90px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  
+  .right-panel {
+    width: 65%;
+    padding-left: 40px;
+    padding-bottom: 5px;
+  }
+  
+  .labels {
+    margin-bottom: 20px;
+  }
+
+  .labels img{
+    width: 14%;
+    margin-bottom: -7px;
+  }
+  
+  .premiere,
+  .streaming {
+    background-color: crimson;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .streaming {
+    background-color: rgb(31, 37, 58);
+    color: rgb(255, 255, 255);
+    padding: 1px 8px 5px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-left: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 8px;
+    border-radius: 16px;
+    
+  }
+  
+  .main-title {
+    font-size: 36px;
+    margin: 0 0 10px;
+  }
+  
+  .info-line {
+    color: #e7e3e3;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .highlight {
+    color: #f39c12;
+    cursor: pointer;
+  }
+  
+  .action-buttons {
+    margin-top: 25px;
+  }
+  
+  .rent-btns,
+  .buy-btns {
+    width: 230px;
+    background-color: #e91e63;
+    border: none;
+    padding: 15px 24px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rent-btn:hover,
+  .buy-btn:hover {
+    background-color: #d81b60;
+  }
+  
+
+
+  .movie-details-container {
+    background-color: white;
+    padding: 40px 60px;
+    font-family: Arial, sans-serif;
+    color: #1e1e1e;
+  }
+
+/* this Section CSS for About the movie Section */
+
+.containers {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  margin-left: 40px;
+}
+
+.about h2,
+.cast-crew h2,
+.crew h2 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.about p {
+  font-size: 15px;
+  color: #444;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cast-card {
+  text-align: center;
+  width: 150px;
+}
+
+.cast-card img {
+  width: 125px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.cast-card h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1rem;
+}
+
+.cast-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.recent h2{
+  margin-bottom: 15px;
+}
+
+.cardz{
+  display: flex;
+  gap: 30px;
+}
+
+
+.ratings-containerz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f1f1f; /* Dark background */
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: white;
+  max-width: fit-content;
+}
+
+.starz {
+  color: #ff6161;
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.ratingsz {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 4px;
+}
+
+.votesz {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.rate-now-buttonz {
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 16px;
+  transition: background 0.3s ease;
+}
+
+.rate-now-buttonz:hover {
+  background-color: #e0e0e0;
+}
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ................................................ */
+
+
+.modal-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 290px;
+  height: auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box h2{
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 8px;
+  text-align: start;
+  font-size: 16px;
+  color: #1f1f1f;
+}
+.modal-box p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-align: start;
+  color: #555;
+  
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 10px 120px;
+  background-color: #e91e63;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.format-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.format-modal-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.movie-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.lang-section {
+  margin-bottom: 20px;
+}
+
+.lang-label {
+  background: #f3f6f8;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.format-buttons button {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  background: white;
+  border: 1px solid #d8d8d8;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  color: #e71c4f;
+  cursor: pointer;
+}
+
+.format-buttons button:hover {
+  background: #f9e6ec;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 430px) {
+
+.movie-detail-container{
+  display: none;
+}
+
+  .movie-card {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 5px 5px 5px;
+    margin: 10px;
+    margin-top: -12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    /* margin-bottom: 20px; */
+  }
+
+/* This is mobile Navbar CSS................................. */
+
+  .movie-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: #000;
+    padding: 15px 10px;
+    flex-wrap: wrap;
+  }
+  
+  /* Group left arrow + title */
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .arrow-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .movie-title {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin: 0; /* remove default h2 margin */
+  }
+  
+  .share-icon {
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* ..................................................... */
+  
+  .movie-trailer-container {
+    position: relative;
+  }
+
+  .movie-trailer-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .trailer-button {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(34, 34, 34, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .in-cinemas{
+    background: #000;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: -15px;
+    padding: 5px ;
+    border-radius: 8px;
+  }
+
+  .in-cinemas-text {
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .ratings-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* aligns everything to the left */
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .star {
+    color: #ff6161;
+    font-size: 20px;
+  }
+  
+  .ratings {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .votes {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .rate-now-button {
+    background: transparent;
+    border: 2px solid #ff6161;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #ff6161;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin-left: auto; /* pushes button to right if there's room */
+  }
+  
+  .rate-now-button:hover {
+    background: #ff6161;
+    color: white;
+  }
+
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* ✅ This creates space between tag group and language group */
+    margin-top: 16px;
+    align-items: center;
+  }
+
+  .tags-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  /* Individual Tag Styling */
+  .tag {
+    background: #e2e2e2;
+    padding: 2px 4px;
+    border-radius: 12px;
+    font-size: 10px;
+    white-space: nowrap; /* prevent breaking mid-tag */
+  }
+  
+  /* Language wrapper — now just behaves like any tag */
+  .language {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  /* Language tags */
+  .language span {
+    background: #e2e2e2;
+    padding: 3px 6px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+
+  .movie-info {
+    margin-top: 16px;
+    /* text-align: center; */
+    font-size: 10px;
+  }
+
+  .movie-description {
+    margin-top: 8px;
+    font-size: 12px;
+    color: gray;
+  }
+
+  .onprime{
+    margin-top: 20px;
+  }
+
+  .onprime img{
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+/* Top Offer Section Css............................ */
+
+  .offers-container {
+    padding: 5px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+  }
+  
+  .offers-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #000;
+  }
+  
+  .offers-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .offer-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff7db;
+    border: 1px solid #ffe8a1;
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-width: 200px;
+    height: 60px; /* Slimmer height */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .offer-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .offer-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  .offer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .offer-heading {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+  }
+  
+  .offer-subtext {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* This is Reviews section CSS....................... */
+
+
+  .top-reviews-container {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .review-count {
+    color: red;
+  }
+  
+  .summary {
+    margin-top: 10px;
+  }
+  
+  .tags {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .tags button {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .comments-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .comment-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #fff;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .booked {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .highlight {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .rating {
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  .hashtags {
+    margin-top: 10px;
+  }
+  
+  .hashtags span {
+    margin-right: 8px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .comment-text {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .comment-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: gray;
+  }
+  
+  .load-more {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .review-count {
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .summary {
+    color: #666;
+    font-size: 14px;
+    margin: 4px 0 12px;
+  }
+  
+  .tagsz {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .tagz {
+    background-color: #f2f2f2;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .reviews-scroll-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .review-card {
+    flex: 0 0 85%;
+    min-width: 280px;
+    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .profile-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .name {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .booked {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .bookmyshow {
+    font-weight: bold;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .rating {
+    margin-left: auto;
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+  }
+  
+  .star-icon {
+    color: red;
+  }
+  
+  .hashtags {
+    margin: 8px 0;
+    font-weight: bold;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .comment {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 12px;
+  }
+  
+  .review-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .review-footer span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+/* this is section is for cast an crews ...............................................*/
+
+  .about{
+    display: none;
+  }
+
+  hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .containers {
+    margin-top: 0;
+    padding: 0 0.70rem;
+    margin-left: 10px;
+  }
+
+  .cast-crew h2,
+  .crew h2 {
+    margin-left: 0;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Cast: horizontal scroll */
+  .cast-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .cast-card {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 100px;
+    scroll-snap-align: start;
+  }
+
+  /* Crew: grid with 2 columns */
+  .cardz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  /* Shared styles */
+  .cast-card img,
+  .cardz .cast-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin: 0 auto;
+  }
+
+  .cast-card h4,
+  .cardz .cast-card h4 {
+    font-size: 0.95rem;
+    margin: 0.4rem 0 0.2rem;
+  }
+
+  .cast-card p,
+  .cardz .cast-card p {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 0;
+  }
+
+  .recent h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .cardz {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0 0.5rem 4rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-item {
+    flex: 0 0 auto;
+    width: 130px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .card-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .movie-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .movie-genre {
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Optional: hide scrollbar */
+  .cardz::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* this is movieDetailBanner Css.............................................. */
+
+  .MovieDetailsBanner img{
+    width: 100%;
+    height: auto;
+    max-width: 370px;
+    /* margin-left: -5px; */
+    justify-items: center;
+  }
+
+  .book-btn-container {
+    position: fixed;
+    padding: 10px 0px 10px 0px;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(255, 255, 255);
+  }
+  
+  .book-btn {
+    background-color: #f84464;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 90%;
+    max-width: 500px;
+  }
+
+}
+
+.MovieDetailsBanner{
+  display: none;
+}
+
+
+
+/* Show mobile view only on small devices */
+.mobile-container {
+  display: none;
+}
+
+.desktop-container {
+  display: block;
+}
+
+@media (max-width: 430px) {
+  .mobile-container {
+    display: block;
+  }
+
+  .desktop-container {
+    display: none;
+  }
+}
+
+
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 430px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+
+
+
+

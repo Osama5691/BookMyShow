@@ -266,3 +266,80 @@ export default function Home() {
 
     )
 }
+
+
+
+
+
+.mobile-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    /*Ensures it fits the viewport width exactly */
+    max-width: 100%;
+    /* Prevents overflow */
+    overflow-x: hidden;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+
+
+
+  <div className="container">
+            <h2>Recommended Movies</h2>
+            <div className="card">
+            <div className="card-item" onClick={handleMovieClick}>
+                <img src="./Card5.png" alt="" />
+                <p className="movie-name">Mission Impossible 9</p>
+                    <p className="movie-genre">Action/Thriller</p>
+                </div>
+                <div className="card-item" onClick={handleMovieClick}>
+                <img src="./Card4.png" alt="" />
+                <p className="movie-name">Final Destination Bloodlines</p>
+                    <p className="movie-genre">Horror/Thriller</p>
+                </div>
+                <div className="card-item" onClick={handleMovieClick}>
+                <img src="./Card3.png" alt="" />
+                <p className="movie-name">Thunderbolts*</p>
+                    <p className="movie-genre">Action/Thriller</p>
+                </div>
+                <div className="card-item" onClick={handleMovieClick}>
+                <img src="./Card2.png" alt="" />
+                <p className="movie-name">Kesari Chapter 2</p>
+                    <p className="movie-genre">History/Crime/Thriller</p>
+                </div>
+                <div className="card-item" onClick={handleMovieClick}>
+                <img src="./Card1.png" alt="" />
+                <p className="movie-name">Raid 2</p>
+                    <p className="movie-genre">Crime/Drama</p>
+                </div>
+        
+        </div>
+
+
+
+
+
+                 <div className="container">
+  <h2>Recommended Movies</h2>
+  <div className="card">
+    {movies.slice(0, 5).map((movie) => (
+      <div
+        className="card-item"
+        key={movie._id}
+        onClick={() => handleMovieClick(movie._id)}
+      >
+        <img src={movie.image} alt={movie.title} />
+        <p className="movie-name">{movie.title}</p>
+        <p className="movie-genre">{movie.genre}</p>
+      </div>
+    ))}
+  </div>
+</div>

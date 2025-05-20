@@ -1,7 +1,32 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css"
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import "./css/Home.css"
 
 export default function Home() {
+   const [movies, setMovies] = useState([]);
+   const navigate = useNavigate();
+
+//   const navigate = useNavigate();
+
+// // Static movie card click handler (no ID for now)
+// const handleMovieClick = () => {
+//   navigate('/movie-details'); // Navigate to the MovieDetails page
+// };
+
+
+useEffect(() => {
+    axios.get("http://localhost:3000/api/get-movies")
+      .then(res => setMovies(res.data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const handleMovieClick = (id) => {
+    navigate(`/movie-details/${id}`);
+  };
+
+
+
 
 
   const mobileSlides = [
@@ -10,8 +35,8 @@ export default function Home() {
   ];
 
   const desktopSlides = [
-    { src: "./Banner3.png" },
-    { src: "./Banner4.png" },
+    { src: "https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1744877848242_revplaycard1240x300.jpg" },
+    { src: "https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1746008992192_themonkeywebcarousel.jpg" },
     { src: "./Banner6.png" },
   ];
 
@@ -91,31 +116,16 @@ export default function Home() {
         <div className="container">
             <h2>Recommended Movies</h2>
             <div className="card">
-            <div className="card-item">
-                <img src="./card1.png" alt="" />
-                <p className="movie-name">Fateh</p>
-                    <p className="movie-genre">Action/Thriller</p>
+              {movies.slice(0, 5).map((movie) => (
+            <div className="card-item" 
+             key={movie._id}
+             onClick={() => handleMovieClick(movie._id)}
+            >
+                <img src={movie.image} alt="" />
+                <p className="movie-name">{movie.title}</p>
+                    <p className="movie-genre">{movie.genre}</p>
                 </div>
-                <div className="card-item">
-                <img src="./card6.png" alt="" />
-                <p className="movie-name">Yeh Jawaani Hai Deewani</p>
-                    <p className="movie-genre">Comedy/Drama/Romantic</p>
-                </div>
-                <div className="card-item">
-                <img src="./card3.png" alt="" />
-                <p className="movie-name">Pushpa 2</p>
-                    <p className="movie-genre">Action/Thriller</p>
-                </div>
-                <div className="card-item">
-                <img src="./card4.png" alt="" />
-                <p className="movie-name">Wolf Man</p>
-                    <p className="movie-genre">Horror/Mysetry/Thriller</p>
-                </div>
-                <div className="card-item">
-                <img src="./card5.png" alt="" />
-                <p className="movie-name">Nosferatu</p>
-                    <p className="movie-genre">Horror/Mysetryr</p>
-                </div>
+              ))}
         
         </div>
 

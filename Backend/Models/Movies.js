@@ -1,18 +1,42 @@
 const mongoose = require("mongoose");
 
 const movieSchema = new mongoose.Schema({
+    mobilebg: String,
+    bgimage: String,
+    image: String,
+    alt: String,
     title: String,
-    posterUrl: String,
-    trailerUrls: [String],
-    rating: Number,
-    voteCount: Number,
-    format: String, // e.g., "2D"
-    language: String, // e.g., "Hindi"
     duration: String,
     genre: String,
-    certificate: String, // e.g., "UA16+"
-    releaseDate: Date,
-    inCinemas: Boolean
+    rating: String,
+    releaseDate: String,
+    ratingsz: String,
+    votes: String,
+    about: String,
+
+    cast: [
+      {
+        name: String,
+        character: String,
+        image: String,
+      },
+    ],
+
+    crew: [
+      {
+        name: String,
+        role: String,
+        image: String,
+      },
+    ],
+
+    suggestions: [
+      {
+        title: String,
+        image: String,
+        languages: String
+      },
+    ],
   });
   
   module.exports = mongoose.model("Movie", movieSchema);

@@ -1,0 +1,522 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container1 {
+  padding: 15px 0px 25px 1px;
+
+}
+
+.container1 h1 {
+  font-size: 35px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.info {
+  display: flex;
+  padding-left: 20px;
+  gap: 10px;
+}
+
+.info span {
+  border: 1px solid black;
+  padding: 1px 8px 3px 8px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+/* This section For Booking-Strip CSS only */
+
+.booking-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  /* soft shadow at bottom */
+  padding: 3px 20px 3px 8px;
+  margin-top: 20px;
+  background-color: white;
+  /* flex-wrap: nowrap; */
+}
+
+.date-row {
+  display: flex;
+  gap: 1px;
+  /* flex-wrap: nowrap; */
+}
+
+.date-card {
+  text-align: center;
+  padding: 10px 1px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  min-width: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-card.active {
+  background-color: #e94364;
+  color: white;
+}
+
+.date-card .day {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.date-card .date {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.date-card .month {
+  font-size: 12px;
+}
+
+
+/* This section CSS for LANG,PRICE,Preferd  */
+
+.filters {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  border-left: 1px solid #e0e0e0;
+  padding-right: 10px;
+}
+
+.filter-tab {
+  padding: 10px 18px;
+  border-left: 1px solid #e0e0e0;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Price Range dropdown container.................. */
+.price-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 0;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.price-option:hover {
+  background-color: #f5f5f5;
+}
+
+.arrow-icon {
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+
+.filter-tab.active {
+  /* border-bottom: 2px solid #e94364; */
+  font-weight: bold;
+  position: relative;
+  padding: 35px 20px 35px 20px;
+  /* color: #e94364; */
+  background-color: #fff;
+}
+
+/* This Css for search .................. */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon-wrapper {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.search-expanded {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.search-expanded input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 18px;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+  margin-left: 10px;
+}
+
+/* This Css For Preferred Time section CSS Only */
+.preferred-time-tab {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  /* Change from left: 0 to right: 0 */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  z-index: 1000;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-option .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.dropdown-option .label {
+  font-weight: bold;
+}
+
+.dropdown-option .time-range {
+  font-size: 12px;
+  color: gray;
+}
+
+/* Preferred Section End here .............................................. */
+
+.legend-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-top: 1px solid #dcdcdc; */
+  border-bottom: 1px solid #dcdcdc;
+  padding: 10px 2%;
+  font-size: 11px;
+  background-color: white;
+  color: #333;
+  margin-top: 6px;
+}
+
+.legend-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: orange;
+}
+
+.lan-box {
+  display: inline-block;
+  border: 1px solid green;
+  color: green;
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+
+.date-selector-container{
+  display: none;
+}
+
+.date-hr{
+  display: none;
+}
+
+/* Legend Section End Here........................... */
+
+
+@media (max-width: 430px) {
+
+  .left-section h3 {
+    justify-content: center;
+  }
+
+
+  .date-selector-container{
+  display: block;
+}
+
+
+.date-hr{
+  display: block;
+}
+
+
+  .book-arrow-icon {
+    margin-bottom: -5px;
+    font-size: 30px;
+  }
+
+  hr {
+    margin-top: -1px;
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+  }
+
+  .search-icon {
+    font-size: 19px;
+    font-style: bolder;
+    cursor: pointer;
+  }
+
+  .right-section img {
+    width: 30px;
+  }
+   
+  .container1 h1 {
+    display: none;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .legend-wrapper {
+    display: none;
+  }
+
+  .booking-strip {
+    display: none;
+  }
+
+  .date-row {
+    display: none;
+  }
+
+
+  .filters {
+    display: none;
+  }
+
+ /* Date Selector Css.............. */
+
+  .date-selector-container {
+    font-family: Arial, sans-serif;
+    padding: 1px;
+    background: white;
+
+  }
+
+  .date-row {
+    display: flex;
+    margin-top: -20px;
+    overflow-x: auto;
+    gap: 10px;
+    padding-top: 10px;
+    padding-left: 3px;
+    padding-bottom: 10px;
+  }
+
+  .date-card {
+    min-width: 50px;
+    text-align: center;
+    padding: 8px 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    color: #333;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .date-card.active {
+    background-color: #f4435c;
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+
+  .day {
+    font-size: 12px;
+  }
+
+  .date {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .month {
+    font-size: 10px;
+  }
+
+  /* This Css Ends Here...................... */
+
+  /* Langauages CSS.............................. */
+
+  .language-tag {
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+  }
+ 
+    /* This is FilterSection Css................................  */
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    margin-top: -15px;
+    margin-left: 3px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+    /* subtle shadow like the image */
+    position: relative;
+    z-index: 1;
+  }
+
+  .sort-btn {
+    flex-shrink: 0;
+    margin-left: -9px;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid #d8d8d8;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #f4435c;
+    cursor: pointer;
+  }
+
+  .price-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 10px;
+    scroll-behavior: smooth;
+  }
+
+  .price-scroll::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar */
+  }
+
+  .price-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+    border: 1px solid #d8d8d8;
+    background-color: white;
+    border-radius: 20px;
+    color: #f4435c;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+
+  .sort-hr {
+    margin-top: 10px;
+  }
+
+
+}
+
+/* Show mobile view only on screens ≤ 430px */
+/* @media (max-width: 430px) {
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: block;
+  }
+} */
+
+/* Show desktop view only on screens > 430px */
+/* @media (min-width: 431px) {
+  .mobile-view {
+    display: none;
+  }
+  .desktop-view {
+    display: block;
+  }
+} */
