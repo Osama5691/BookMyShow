@@ -343,3 +343,249 @@ export default function Home() {
     ))}
   </div>
 </div>
+
+
+
+
+
+
+
+
+{/* Flex wrapper for Snacks and Ticket Summary */}
+      <div className="main-flex-container">
+        {/* Snacks Section */}
+        <div className="snacks-container">
+          <h1>
+            Grab a <span>bite !</span>
+          </h1>
+          <p>
+            Now get your Favorite snack at a <span>discount price!</span>
+          </p>
+
+          <div className="snacks-filter">
+            <span>ALL</span> &nbsp;
+            <span>POPCORN</span> &nbsp;
+            <span>SNACKS</span> &nbsp;
+            <span>COMBOS</span> &nbsp;
+            <span>BEVERAGES</span> &nbsp;
+          </div>
+
+          <div className="snack-section">
+            <div className="snack-items">
+              {/* Multiple Cards */}
+              {/* CARD 1 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/2001054_26122022174031.png"
+                    alt="Popcorn"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Jumbo Cheese Popcorn</h3>
+                    <p className="snack-desc">
+                      Jumbo Cheese Popcorn 240g | 1380 kcal
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹640</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+              {/* CARD 2 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/1020006_06082018135441.png"
+                    alt="Nachos"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Nachos</h3>
+                    <p className="snack-desc">
+                      Nachos 80g with Cheese Dip 50g | 382 kcal
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹400</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+              {/* CARD 3 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/2000492_01082023133741.png"
+                    alt="Nachos"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Nachos Combo (Flavoured)</h3>
+                    <p className="snack-desc">
+                      Jumbo Tub Flavoured Popcorn 240g 
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹1150</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+
+              {/* CARD 4 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/2001054_26122022174031.png"
+                    alt="Nachos"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Jumbo Salted Popcorn</h3>
+                    <p className="snack-desc">
+                      Jumbo Salted Popcorn 240g | 1311 kcal
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹600</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+
+              {/* CARD 5 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/1020011_17082018145045.png"
+                    alt="Nachos"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Coke 810ml</h3>
+                    <p className="snack-desc">
+                     Coke 810ml | 373 kcal
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹450</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+
+             {/* CARD 6 */}
+              <div className="snack-card">
+                <div className="card-top">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <img
+                    src="https://in.bmscdn.com/fnb/v3/xxhdpi/1020080_17082018155618.png"
+                    alt="Nachos"
+                    className="snack-image"
+                  />
+                  <div className="snack-info">
+                    <h3 className="snack-title">Cappuccino 150ml</h3>
+                    <p className="snack-desc">
+                      Cappuccino 150ml | 99 kcal
+                    </p>
+                  </div>
+                </div>
+                <div className="card-bottom">
+                  <span className="price">₹400</span>
+                  <button className="add-btn">Add</button>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div className="instructions"> 
+            <h5>Note:</h5>
+            <span>1. Images are for representation purposes only.</span>
+            <br />
+            <span>2. Prices inclusive of taxes.</span>
+            <br />
+            <span>
+              3. All nutritional information is indicative, values are per serve
+              as shared by the Cinema and may vary depending on the ingredients
+              and portion size.
+            </span>
+            <br />
+            <span>
+              4. An average active adult requires 2000 kcal energy per day,
+              however, calorie needs may vary.
+            </span>
+            <br /> <br />
+            <span>Kids above the age of 3 years will be charged separately.</span>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+ .seats {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.seat {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* .seat:hover {
+  background-color:  #00b386;
+} */
+

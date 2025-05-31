@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { FaFilter } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import SelectTheater from "./SelectTheater";
 import FilterModel from "./FilterModel"
 import Navbar from "../Navbar/Navbar";
@@ -40,11 +40,22 @@ export default function BookingPage() {
     setIsExpanded(false);
   };
 
-  
+
   const navigate = useNavigate();
   const location = useLocation();
-  const { title, rating, genre } = location.state || {};
-  
+  const {
+    movieId: stateMovieId,
+    title: stateTitle,
+    rating: stateRating,
+    genre: stateGenre,
+    releaseDate: stateReleaseDate,
+  } = location.state || {};
+
+  const movieId = stateMovieId || localStorage.getItem('movieId');
+  const title = stateTitle || localStorage.getItem('movieTitle');
+  const rating = stateRating || localStorage.getItem('movieRating');
+  const genre = stateGenre || localStorage.getItem('movieGenre');
+  const releaseDate = stateReleaseDate || localStorage.getItem('movieReleaseDate');
 
 
   const [selectedIndex, setSelectedIndex] = useState(0); // Initially selecting index 1
@@ -73,17 +84,17 @@ export default function BookingPage() {
   };
 
   // Save some details in session stroge because page re-loded essue......
-useEffect(() => {
-  if (title) localStorage.setItem('movieTitle', title);
-  if (rating) localStorage.setItem('movieRating', rating);
-  if (genre) localStorage.setItem('movieGenre', genre);
-}, [title, rating, genre]);
+  useEffect(() => {
+    if (title) localStorage.setItem('movieTitle', title);
+    if (rating) localStorage.setItem('movieRating', rating);
+    if (genre) localStorage.setItem('movieGenre', genre);
+  }, [title, rating, genre]);
 
 
 
   // Split genre string by comma and trim spaces
   const genreArray = genre ? genre.split(",").map(item => item.trim()) : [];
-
+  // console.log("Movie ID from URL:", movieId);
 
   return (
     <>
@@ -93,7 +104,9 @@ useEffect(() => {
       <div className="mobile-container">
         <div className="movie-nav">
           <div className="left-section">
-            <span className="book-arrow-icon" onClick={() => navigate('/movie-details')}>
+            <span className="book-arrow-icon"
+              onClick={() => navigate(`/movie-details/${movieId}`)}
+            >
               <MdOutlineKeyboardArrowLeft />
             </span>
             <h3>{title}</h3>
@@ -155,7 +168,7 @@ useEffect(() => {
       <div className="desktop-view">
         {/* <Navbar/> */}
         <div className="container1">
-          <h1>{title}</h1>
+          <h1>{title} (Hindi)</h1>
           <div className="info">
             <span>{rating}</span>
             {genreArray.map((g, index) => (
@@ -295,9 +308,12 @@ useEffect(() => {
             </div>
           </div>
 
-          <SelectTheater 
-          movieTitle={title}
+          <SelectTheater
+            movieTitle={title}
+            releasedate={releaseDate}
+
           />
+
 
         </div>
       </div>

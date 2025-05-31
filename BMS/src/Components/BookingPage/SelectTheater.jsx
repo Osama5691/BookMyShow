@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "../../css/SelectTheater.css"
 import { FaHeart } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
@@ -57,7 +57,7 @@ const theaters = [
   },
 
   {
-    name: "PVR: The Capital Mall, Nalasopara(E) ",
+    name: "Miraj Fun Fiesta Cinema, Nalasopara(W)",
     cancellable: false,
     timings: [
       { time: "09:00 AM", format: "DOLBY 7.1" },
@@ -83,13 +83,20 @@ const theaters = [
 const SelectTheater = ({ movieTitle }) => {
 
   const [hideLower, setHideLower] = useState(false);
+  const [hovered, setHovered] = useState({ theaterIndex: null, slotIndex: null });
 
 
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleSlotClick = (time, format, theaterName) => {
+  const { releaseDate, } = location.state || {};
+
+
+
+
+  const handleSlotClick = (time, format, theaterName,) => {
     navigate("/select-seats", {
-      state: { title: movieTitle, time, format, theaterName }
+      state: { title: movieTitle, time, format, theaterName, releaseDate: releaseDate, }
     });
   };
 
@@ -97,8 +104,8 @@ const SelectTheater = ({ movieTitle }) => {
   return (
     <>
       <div className="booking-container">
-        {theaters.map((theater, index) => (
-          <div className="theater-section" key={index}>
+        {theaters.map((theater, theaterIndex) => (
+          <div className="theater-section" key={theaterIndex}>
             <div className="theater-left">
               <div className="theater-title">
                 <FaHeart className="heart-icon" />
@@ -111,30 +118,64 @@ const SelectTheater = ({ movieTitle }) => {
                 {theater.cancellable ? "Cancellation available" : "Non-cancellable"}
               </p>
             </div>
-            <div className="theater-right">
-              {theater.timings.map((slot, i) => (
-                <div className="time-card" key={i} onClick={() => handleSlotClick(slot.time, slot.format, theater.name)}>
-                  <div className="time">{slot.time}</div>
-                  <div className="format">{slot.format}</div>
-                </div>
 
+            <div className="theater-right">
+              {theater.timings.map((slot, slotIndex) => (
+                <div
+                  key={slotIndex}
+                  className="time-card-wrapper"
+                  onMouseEnter={() => setHovered({ theaterIndex, slotIndex })}
+                  onMouseLeave={() => setHovered({ theaterIndex: null, slotIndex: null })}
+                >
+                  <div
+                    className="time-card"
+                    onClick={() => handleSlotClick(slot.time, slot.format, theater.name)}
+                  >
+                    <div className="time">{slot.time}</div>
+                    <div className="format">{slot.format}</div>
+                  </div>
+
+                  {hovered.theaterIndex === theaterIndex && hovered.slotIndex === slotIndex && (
+                    <div className="seat-typesz">
+                      <div>
+                        <div className="ratez">₹ 300.00</div>
+                        <div className="typez">NORMAL</div>
+                        <div className="availablezz">Available</div>
+                      </div>
+                      <div>
+                        <div className="ratez">₹ 320.00</div>
+                        <div className="typez">EXECUTIVE</div>
+                        <div className="availablezz">Available</div>
+                      </div>
+                      <div>
+                        <div className="ratez">₹ 340.00</div>
+                        <div className="typez">PREMIUM</div>
+                        <div className="availablezz">Available</div>
+                      </div>
+                      <div>
+                        <div className="ratez">₹ 540.00</div>
+                        <div className="typez">VIP</div>
+                        <div className="availablezz">Available</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
         ))}
-      </div>
 
-      {!hideLower && (
-        <div className="lower">
-          <div className="left">
-            <h5>
-              Mark Favourite Cinemas by tapping on the <span><CiHeart /></span>
-            </h5>
-            <button onClick={() => setHideLower(true)}>Got It</button>
+        {!hideLower && (
+          <div className="lower">
+            <div className="left">
+              <h5>
+                Mark Favourite Cinemas by tapping on the <span><CiHeart /></span>
+              </h5>
+              <button onClick={() => setHideLower(true)}>Got It</button>
+            </div>
           </div>
-        </div>
-      )}
-
+        )}
+      </div>
 
     </>
   );

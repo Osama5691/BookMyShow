@@ -326,6 +326,7 @@
 
 .date-hr{
   display: block;
+  margin-top: -1px;
 }
 
 

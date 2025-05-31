@@ -39,6 +39,7 @@ export default function MovieDetails() {
   const [showWarning, setShowWarning] = useState(false);
   const [showFormatModal, setShowFormatModal] = useState(false);
   const { id } = useParams();
+  // console.log("Movie ID from URL:", id);
   const [movie, setMovie] = useState([]);
   const navigate = useNavigate();
 
@@ -60,18 +61,28 @@ export default function MovieDetails() {
 
 
 
-
-
-
   const handleBookTicket = () => {
     if (movie?.rating === "A") {
       setShowWarning(true); // Show warning modal
     } else {
+
+      // ✅ Save to localStorage before navigating
+      localStorage.setItem("movieId", movie._id);
+      localStorage.setItem("movieTitle", movie.title);
+      localStorage.setItem("movieRating", movie.rating);
+      localStorage.setItem("movieGenre", movie.genre);
+      localStorage.setItem("movieReleaseDate", movie.releaseDate);
+
+      // console.log("Movie ID from URL:", id);
       navigate("/booking-details", {
         state: {
+          movieId: movie._id,
           title: movie.title,
           rating: movie.rating,
-          genre: movie.genre
+          genre: movie.genre,
+          releaseDate: movie.releaseDate,
+
+
         }
       });
     }
@@ -84,11 +95,19 @@ export default function MovieDetails() {
   };
 
   const handleFormatSelect = (format, language) => {
+    // ✅ Save to localStorage before navigating
+    localStorage.setItem("movieId", movie._id);
+    localStorage.setItem("movieTitle", movie.title);
+    localStorage.setItem("movieRating", movie.rating);
+    localStorage.setItem("movieGenre", movie.genre);
+    localStorage.setItem("movieReleaseDate", movie.releaseDate);
+
     navigate("/booking-details", {
       state: {
         title: movie.title,
         rating: movie.rating,
-        genre: movie.genre
+        genre: movie.genre,
+        releaseDate: movie.releaseDate,
       }
     });
   };
@@ -99,7 +118,7 @@ export default function MovieDetails() {
       <div className="mobile-container">
         <div className="movie-nav">
           <div className="left-section">
-            <span className="arrow-icon"
+            <span className="arrow-icon-md"
               onClick={() => navigate('/')}>
               <MdOutlineKeyboardArrowLeft />
             </span>

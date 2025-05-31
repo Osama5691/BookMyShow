@@ -88,6 +88,65 @@
   display: none;
 }
 
+/* This section CSS for When I Hover ANy time Card Its appear!... */
+.time-card-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+  
+}
+
+.seat-typesz {
+  position: absolute;
+  top: -85px; /* adjust based on position */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  gap: 15px !important;
+  z-index: 400;
+}
+
+.seat-typesz::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255) transparent transparent transparent;
+}
+
+.seat-typesz > div {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  min-width: 1px;
+}
+
+.ratez {
+ font-size: 13px !important;
+  font-weight: 500 !important;
+  margin-bottom: 5px;
+}
+
+.typez {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.availablezz {
+  color: green;
+  font-size: 13px;
+}
+
+
+
+
 
 /* Media Queries Section ...................................... */
 

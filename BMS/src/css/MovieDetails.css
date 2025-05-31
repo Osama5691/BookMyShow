@@ -410,7 +410,7 @@ hr {
     padding: 10px 5px 5px 5px;
     margin: 10px;
     margin-top: -12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
     /* margin-bottom: 20px; */
   }
@@ -434,8 +434,8 @@ hr {
     gap: 8px;
   }
   
-  .arrow-icon {
-    font-size: 24px;
+  .arrow-icon-md {
+    font-size: 30px;
     cursor: pointer;
   }
   

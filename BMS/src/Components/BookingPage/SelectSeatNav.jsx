@@ -10,13 +10,48 @@ export default function SelectSeatNav() {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedSeats, setSelectedSeats] = useState(1);
+  const [showPriceButton, setShowPriceButton] = useState(false); // Yeh state control karegi visibility
+
   const navigate = useNavigate();
   const location = useLocation();
-  const { title, rating, genre, time, format, theaterName } = location.state || {};
+  const {
+    title: navTitle,
+    rating: navRating,
+    genre: navGenre,
+    time: navTime,
+    format: navFormat,
+    theaterName: navTheaterName,
+    releaseDate: navReleaseDate, } = location.state || {};
 
-  const movieTitle = title || localStorage.getItem("movieTitle");
-  const movieRating = rating || localStorage.getItem('movieRating');
-  const movieGenre = genre || localStorage.getItem('movieGenre');
+  // Fallbacks with localStorage
+  const movieTitle = navTitle || localStorage.getItem("movieTitle");
+  const movieRating = navRating || localStorage.getItem("movieRating");
+  const movieGenre = navGenre || localStorage.getItem("movieGenre");
+  const movieTime = navTime || localStorage.getItem("movieTime");
+  const movieFormat = navFormat || localStorage.getItem("movieFormat");
+  const theatername = navTheaterName || localStorage.getItem("theatername");
+  const movieReleaseDate = navReleaseDate || localStorage.getItem("movieReleaseDate");
+
+
+  useEffect(() => {
+    if (movieTitle) localStorage.setItem("movieTitle", movieTitle);
+    if (movieRating) localStorage.setItem("movieRating", movieRating);
+    if (movieGenre) localStorage.setItem("movieGenre", movieGenre);
+    if (movieTime) localStorage.setItem("movieTime", movieTime);
+    if (movieFormat) localStorage.setItem("movieFormat", movieFormat);
+    if (theatername) localStorage.setItem("theatername", theatername);
+    if (movieReleaseDate) localStorage.setItem("movieReleaseDate", movieReleaseDate);
+  }, [
+    movieTitle,
+    movieRating,
+    movieGenre,
+    movieTime,
+    movieFormat,
+    theatername,
+    movieReleaseDate,
+  ]);
+
+  // console.log("Final release date value: ", movieReleaseDate);
 
   // ✅ Define available seat-specific images
   const seatImages = {
@@ -73,9 +108,9 @@ export default function SelectSeatNav() {
                   <IoIosArrowBack />
                 </span>
                 <div>
-                  <h3>{title || "Movie Title"}</h3>
+                  <h3>{movieTitle}</h3>
                   <p>
-                    <strong>{theaterName || "Theater Name"}</strong> | Saturday, May 17, 2025, {time} ({format})
+                    <strong>{theatername}</strong> | Saturday,{movieReleaseDate} , {movieTime} ({movieFormat})
                   </p>
                 </div>
               </div>
@@ -119,27 +154,27 @@ export default function SelectSeatNav() {
                   ))}
                 </div>
 
-                <hr className="divider" />
+                <hr className="dividerr" />
 
                 <div className="seat-types">
                   <div>
                     <div className="type">NORMAL</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">EXECUTIVE</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">PREMIUM</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">VIP</div>
-                    <div className="price">Rs. 400</div>
+                    <div className="rate">Rs. 400</div>
                     <div className="available">Available</div>
                   </div>
                 </div>
@@ -173,11 +208,11 @@ export default function SelectSeatNav() {
 
       <div className="mobile-views">
         <div className='Top-section'>
-          <div className="movie-container">
-            <div className="top-section">
+          <div className="movie-containers">
+            <div className="top-sections">
               <div className="left-sec">
                 <div className="left-icon">
-                  <span className="back-arrow"
+                  <span className="back-arrow-sn"
                     onClick={() =>
                       navigate('/booking-details', {
                         state: {
@@ -189,10 +224,10 @@ export default function SelectSeatNav() {
                     <IoIosArrowBack />
                   </span>
                 </div>
-                <h3>{title || "Movie Title"}</h3>
+                <h3>{movieTitle}</h3>
               </div>
               <div className="cinema-info">
-                <p><strong>{theaterName || "Theater Name"}</strong></p>
+                <p><strong>{theatername}</strong></p>
               </div>
               <div className="right-sec">
                 <p>Mon, 19 May</p>
@@ -232,27 +267,27 @@ export default function SelectSeatNav() {
                   ))}
                 </div>
 
-                <hr className="divider" />
+                <hr className="dividerr" />
 
                 <div className="seat-types">
                   <div>
                     <div className="type">NORMAL</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">EXECUTIVE</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">PREMIUM</div>
-                    <div className="price">Rs. 200</div>
+                    <div className="rate">Rs. 200</div>
                     <div className="available">Available</div>
                   </div>
                   <div>
                     <div className="type">VIP</div>
-                    <div className="price">Rs. 400</div>
+                    <div className="rate">Rs. 400</div>
                     <div className="available">Available</div>
                   </div>
                 </div>
@@ -283,16 +318,24 @@ export default function SelectSeatNav() {
 
       {/* ends here........................................................... */}
 
-      <SelectSeats />
+      <SelectSeats
+        selectedSeats={selectedSeats}
+        setShowPriceButton={setShowPriceButton}
+        title={movieTitle}
+        theaterName={theatername}
+        time={movieTime}
+        format={movieFormat}
+        releaseDate={movieReleaseDate}
+      />
 
       {/* this section Code for check Availabilty etc......................... */}
-      {!showModal && (
+      {!showModal && !showPriceButton && (
         <div className="seat-info-wrapper">
           <div className="seat-info">
             <div className="seat-box sold"></div>
             <span>BestSeller</span>
 
-            <div className="seat-box available"></div>
+            <div className="seat-box availablez"></div>
             <span>Available</span>
 
             <div className="seat-box selected"></div>
