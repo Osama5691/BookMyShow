@@ -1,0 +1,196 @@
+/* This section CSS for Ticket Modal................................................ */
+
+.modal-ticket-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-x: hidden;
+}
+
+.modal-ticket-card {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    position: relative;
+    width: 340px;
+    background: #fff;
+    font-family: Roboto, sans-serif;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    /* Animation start */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: modalFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ticket content */
+.modal-ticket-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.modal-ticket-header {
+    display: flex;
+    padding: 10px;
+    gap: 12px;
+    align-items: flex-start;
+
+}
+
+.modal-ticket-header img {
+    width: 80px;
+    /* height: 90px; */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-ticket-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 28px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal-ticket-header p {
+    margin: 2px 0;
+    font-size: 0.85rem;
+    color: #555;
+    width: 200px;
+    /* Set a fixed width for the container */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.modal-desc {
+    margin-top: 5px;
+}
+
+.modal-ticket-divider {
+    background: #f2f2f2;
+    padding: 6px;
+    text-align: center;
+    margin: 14px 0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal-ticket-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-ticket-info h3 {
+    margin: 6px 0;
+}
+
+.modal-ticket-info strong {
+    display: block;
+    margin-top: 4px;
+    color: #333;
+}
+
+.modal-ticket-note {
+    background: #f7f7f7;
+    padding: 10px;
+    font-size: 0.78rem;
+    text-align: center;
+    color: #666;
+    margin: 12px 0;
+    border-radius: 8px;
+}
+
+.modal-ticket-support {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 14px;
+    padding: 10px;
+}
+
+.modal-ticket-footer {
+    background: #f2f2f2;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 0 0 18px 18px;
+}
+
+.modal-footer-row-total-amt {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.modal-footer-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #333;
+    margin: 4px 0;
+}
+
+/* Cutouts */
+.modal-cut {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.modal-cut-left {
+    left: -11px;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.modal-cut-right {
+    right: -11px;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.modal-cut-left-bottom {
+    left: -11px;
+    top: 62%;
+    transform: translateY(-50%);
+}
+
+.modal-cut-right-bottom {
+    right: -11px;
+    top: 62%;
+    transform: translateY(-50%);
+}
+
+/* this Model Section Ends here.......................................... */

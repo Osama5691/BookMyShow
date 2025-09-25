@@ -1,0 +1,109 @@
+.exit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.exit-modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  animation: zoomIn 0.4s ease forwards;
+  transform: scale(0.7);
+  opacity: 0;
+}
+
+.exit-modal-content h3 {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.exit-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.exit-no-btn,
+.exit-yes-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.exit-no-btn {
+  background: #ccc;
+}
+
+.exit-yes-btn {
+  background: #ff4d6d;
+  color: white;
+}
+
+.exit-yes-btn:hover {
+  background: #ff2a4d;
+}
+
+.exit-no-btn:hover {
+  background: #b5b5b5;
+}
+
+.exit-img {
+  width: 100px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+/* ✅ Responsive Styles for Mobiles and Small Screens */
+@media (max-width: 480px) {
+  .exit-modal-content {
+    padding: 15px 10px !important;
+    border-radius: 10px;
+    max-width: 90%;
+  }
+
+  .exit-modal-content h3 {
+    font-size: 16px;
+  }
+
+  .exit-modal-buttons {
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .exit-no-btn,
+  .exit-yes-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .exit-img {
+    width: 100px !important;
+  }
+}

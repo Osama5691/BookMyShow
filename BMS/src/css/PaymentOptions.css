@@ -1,0 +1,403 @@
+/* This section CSS For payments................................... */
+.payment-container {
+  display: flex;
+  margin: 20px;
+  margin-top: 1px;
+  margin-right: 390px;
+  font-family: Arial, sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Left Sidebar */
+.left-side {
+  width: 260px;
+  background-color: #f9f9f9;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-right: 1px solid #ddd;
+}
+
+.menu-item {
+  padding: 18px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+/* Active selection like "Pay by any UPI App" */
+.menu-item.active {
+  background-color: white;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Inactive items like "Net Banking", "Gift Voucher" */
+.menu-item.inactive {
+  background-color: #f7f7f7;
+  color: #888;
+  font-weight: normal;
+}
+
+.menu-item:hover {
+  background-color: #ececec;
+}
+
+
+/* Right UPI Section */
+.right-side {
+  flex: 1;
+  width: 100%;
+  height: 400px;
+  padding: 30px 40px;
+  background-color: #fff;
+}
+
+.first{
+    display: flex;
+    /* margin-top: -5px; */
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.first h2{
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+}
+
+.first img{
+    width: 9%;
+    margin-top: -3px;
+}
+
+
+/* UPI Row Layout */
+.upi-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.upi-row label {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.upi-row img {
+  width: 30px;
+  height: auto ;
+}
+
+/* QR Code Section */
+.qr-section {
+  margin-top: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.qr-section label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.qr-box {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 2px dashed #aaa;
+  text-align: center;
+  line-height: 38px;
+  
+}
+
+/* Terms */
+.terms {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #777;
+}
+
+.terms a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+
+
+/* this section css For Quick pay......................................... */
+
+/* .quikpay-container {
+  width: 500px;
+  padding: 40px;
+  border-top: 10px solid #f8485e;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.quikpay-heading {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 30px;
+  color: #2c2c2c;
+}
+
+.section-title {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 15px;
+  transform: scale(1.2);
+}
+
+.logo {
+  height: auto;
+  width: 10%;
+  margin-right: 10px;
+}
+
+.paytm-logo{
+  height: auto;
+  width: 20%;
+}
+
+.upi-label {
+  margin-top: 20px;
+}
+
+.upi-id {
+  font-size: 14px;
+  margin-top: -10px;
+  color: #000;
+}
+
+.make-payment {
+  width: 30%;
+  background-color: #f8485e;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.make-payment:hover {
+  background-color: #d93c4f;
+}
+
+.disclaimer {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #555;
+  text-align: left;
+}
+
+.disclaimer a {
+  color: #555;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+
+/* this section css For Gift Voucher................................... */
+
+/* .gv-container {
+  padding: 32px;
+  background-color: white;
+  border-radius: 4px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+.gv-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.gv-input-wrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gv-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.gv-button {
+  background-color: #f9425f;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.gv-button:hover {
+  background-color: #e83553;
+}
+
+.gv-error-text {
+  color: #a52a2a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.gv-error-text a {
+  color: #f9425f;
+  text-decoration: none;
+}
+
+.gv-error-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* This Section CSS for Debit/Credit Card .................................... */
+
+/* .card-container {
+  padding: 30px;
+  background-color: #fff;
+  max-width: 800px;
+} */
+
+.card-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.card-box {
+  background: linear-gradient(125deg, #dadee3 0, #dadee3 50%, #d2d6de 51%, #d2d6de 100%);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 #c9ccd2;
+  max-width: 330px;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card-input {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.expiry-cvv-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.expiry {
+  flex: 1;
+}
+
+/* .cvv {
+  flex: 0;
+} */
+
+.small-label {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.expiry-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.small-input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.cvv-input {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.make-payment-btn {
+  margin-top: 30px;
+  background-color: #f64565;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.make-payment-btn:hover {
+  background-color: #e43d5c;
+}
+
+.terms-text {
+  font-size: 12px;
+  color: #888;
+  margin-top: 16px;
+}
+
+.terms-link {
+  color: #f64565;
+  font-weight: 500;
+  cursor: pointer;
+}

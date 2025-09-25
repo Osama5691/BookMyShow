@@ -1,0 +1,696 @@
+/* Wrapper & Layout */
+.ticket-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 30px 40px;
+}
+
+.ticket-left {
+  flex: 1;
+  max-width: 450px;
+}
+
+.ticket-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top Header Section */
+.ticket-header-top {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 140px;
+  align-items: center;
+}
+
+.ticket-back-icon {
+  font-size: 30px;
+  padding-right: 60px;
+  color: #333;
+  font-weight: 100;
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.ticket-sec-title {
+  margin-top: -10px;
+  letter-spacing: 0.2px;
+  color: rgb(51, 51, 51);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  font-family: Roboto, sans-serif;
+}
+
+.ticket-share-icon {
+  font-size: 26px;
+  margin-top: -5px;
+  margin-left: 5px;
+}
+
+.ticket-scan-banner img {
+  width: 350px;
+  margin-left: 112px;
+}
+
+/* Ticket Container */
+.ticket-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  margin-left: 120px;
+  animation: slideInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.ticket-box {
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.ticket-box::before,
+.ticket-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 25px;
+  background-color: #f2f2f2;
+  border: none;
+  top: 42%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.ticket-box::before {
+  left: -10px;
+}
+
+.ticket-box::after {
+  right: -10px;
+}
+
+/* Ticket Details */
+.ticket-box-header {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ticket-box-header img {
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-box-details h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ticket-box-details p {
+  margin: 2px 0;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  color: #444;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ticket-cert {
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.ticket-box-action {
+  text-align: center;
+  padding: 8px 20px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: rgb(51, 51, 51);
+  background-color: rgb(245, 245, 245);
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.ticket-box-body {
+  text-align: center;
+  padding: 20px;
+}
+
+.ticket-box-body p {
+  margin: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.ticket-box-body h3 {
+  margin: 6px 0;
+  font-size: 19px;
+  color: black;
+}
+
+.ticket-booking-id {
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+  margin-top: 10px;
+}
+
+.ticket-box-footer {
+  background-color: #f6f6f6;
+  border-top: 1px solid #ddd;
+  padding: 8px 20px;
+  font-size: 12px;
+}
+
+.ticket-cancel-info {
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.ticket-box-amount {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+
+/* Right Cards  section.......................................*/
+.ticket-card {
+  width: 100%;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  text-align: center;
+  margin: 28px auto 0 auto; /* ✅ centers the card */
+  opacity: 0;
+  animation: slideInUpFade 0.6s ease-out forwards;
+}
+
+.ticket-reward-card {
+  background: linear-gradient(180deg, #9c88ff, #8e44ad);
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  animation-delay: 0.4s;
+}
+
+.ticket-reward-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ticket-reward-open {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.ticket-food-card {
+  background: linear-gradient(135deg, #b31217, #e52d27);
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  animation-delay: 0.6s;
+}
+
+.ticket-food-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.ticket-stream-card {
+  background: #f8f8f8;
+  color: #333;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  animation-delay: 0.8s;
+}
+
+.ticket-stream-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.ticket-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUpFade {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* This section Css for Website logo................................... */
+
+.web-logo {
+  display: flex;
+  justify-content: center;
+  margin: -10px auto 0 auto;
+}
+
+.web-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* This section Ends here................................ */
+
+/* This footer section Css..........................................  */
+.ticket-footer-section{
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.ticket-footer-section h3{
+ font-size: 14px;
+ font-weight: 500;
+ letter-spacing: 0.1px;
+ text-transform: none;
+ color: rgb(127, 127, 127);
+}
+
+.ticket-footer-section p{
+  font-size: 11px;
+  line-height: 16px;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(127, 127, 127);
+}
+
+/* this section ends here........................................... */
+
+.ticket-wrapper-mobile{
+  display: none;
+}
+
+.ticket-right{
+  display: block;
+}
+
+.mobile-ticket-right{
+  display: none;
+}
+
+
+
+
+
+.exit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.exit-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.exit-img{
+  width: 100px;
+}
+
+.exit-modal-buttons button {
+  margin: 10px;
+  padding: 8px 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f43f5e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.exit-modal-buttons button:hover{
+  background-color: #fff;
+  color: black;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  color: white;
+}
+
+.spinner {
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+/* This is Media Queries Css ................................................ */
+
+@media (max-width: 430px) {
+  .ticket-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1px;
+  }
+
+  .ticket-left {
+    display: none;
+  }
+
+  .ticket-wrapper-mobile{
+  display: block;
+}
+
+.ticket-footer-section{
+  display: none;
+}
+
+  .ticket-right {
+    display: none;
+  }
+
+  .ticket-desktop-view{
+    display: none;
+  }
+
+  .mobile-ticket-right{
+  display: block;
+}
+
+
+  /* .ticket-header-top{
+    display: none;
+  }
+  .ticket-scan-banner{
+    display: none;
+  } */
+
+  .ticket-wrapper-mobile {
+    padding-bottom: 15px;
+    background-color: #d2d1d1;
+  }
+
+  .ticket-top-sec {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 10px;
+    margin-left: 40px;
+    gap: 60px;
+  }
+
+  .ticket-left-mobile {
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    /* Space between h3 and share icon */
+    margin-left: 30px;
+  }
+
+  .ticket-top-sec h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .ticket-share {
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .ticket-cancel {
+    font-size: 40px;
+    cursor: pointer;
+    color: #d64d52;
+    margin-right: -20px;
+
+  }
+
+  .ticket-content-container {
+    margin: 9px auto; /* ✅ Center it horizontally */
+    padding: 10px;
+    margin-top: -15px;
+  }
+
+  .ticket-box {
+    width: 100%;
+    max-width: 350px;
+    /* or 95% for responsiveness */
+    margin: 0 auto;
+    /* ✅ ensure it's horizontally centered */
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+  }
+
+  .ticket-box::before,
+  .ticket-box::after {
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .ticket-box-body {
+    padding: 20px;
+  }
+
+  .ticket-box-details h2 {
+    font-size: 18px !important;
+    font-weight: 700;
+  }
+
+  .ticket-box-details p {
+    font-size: 14px !important;
+    width: 220px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ticket-body-content {
+    display: flex;
+    flex-direction: row;
+    /* ✅ horizontal layout */
+    align-items: center;
+    /* ✅ vertical center alignment */
+    justify-content: center;
+    gap: 15px;
+    /* space between QR and details */
+  }
+
+  .ticket-qr img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  .ticket-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* aligns text to the left inside details box */
+    gap: 4px;
+  }
+
+  .ticket-details p,
+  .ticket-details h3 {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .ticket-booking-id {
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .ticket-box-header {
+    padding: 25px;
+    flex-direction: row;
+
+  }
+
+  .ticket-box-header img {
+    width: 70px;
+    margin-right: 15px;
+  }
+
+  .ticket-box-details h2 {
+    font-size: 15px;
+  }
+
+  .ticket-cert {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: #000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .ticket-box-details p {
+    font-size: 13px;
+    width: 160px;
+  }
+
+  .ticket-box-action {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+
+  .ticket-body-content {
+    flex-direction: row;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .ticket-qr img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ticket-details {
+    align-items: center;
+  }
+
+  .ticket-details p,
+  .ticket-booking-id {
+    font-size: 14px;
+  }
+
+  .ticket-details h3 {
+    font-size: 18px;
+  }
+
+  .ticket-box-amount {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  /* rate button Section CSS Here.............................. */
+  .rate-movie-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 85%;
+  margin: 0 auto; /* centers it */
+  gap: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.rate-icon {
+  font-size: 18px;
+}
+
+.rate-text {
+  font-weight: 500;
+  color: #111;
+}
+/* This section ends here........................ */
+
+.ticket-card {
+    width: 96%;
+    padding: 14px;
+  }
+
+  .web-logo img {
+    width: 170px;
+  }
+
+  .ticket-reward-title,
+  .ticket-food-title,
+  .ticket-stream-title {
+    font-size: 14px;
+  }
+
+  .ticket-reward-open {
+    font-size: 12px;
+  }
+
+}
+
+
+

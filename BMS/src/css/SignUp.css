@@ -1,0 +1,247 @@
+.signup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.signup-modal {
+    background: white;
+    width: 310px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.signup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-header h2 {
+    margin: 0;
+    font-size: 20px;
+    margin-left: 100px;
+}
+
+.signup-close-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.signup-button-group {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.signup-social-btn img {
+    width: 30px;
+    /* height: 18px; */
+}
+
+.signup-social-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+.signup-mobile-input {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 6px;
+    justify-content: center;
+    gap: 6px;
+}
+
+.signup-mobile-input img {
+    width: 20px;
+    margin-top: 3px;
+    /* height: 14px; */
+}
+
+.signup-mobile-input span {
+    font-size: 14px;
+}
+
+.signup-mobile-input input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-left: 6px;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.signup-terms {
+    font-size: 11px;
+    color: #777;
+    margin-top: 20px;
+    padding: 30px 0px;
+}
+
+.signup-terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-terms a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Mobile number Container CSS here.............. */
+.signup-mobile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Mobile number input */
+.signup-mobile-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.country-code {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #333;
+}
+
+.signup-mobile-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+/* OTP input */
+.otp-input {
+  text-align: center;
+  letter-spacing: 6px; /* space between digits */
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.otp-input:focus {
+  border-color: #e50914; /* Netflix red style */
+}
+
+/* Buttons */
+.signup-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e50914; /* Red */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #b00710;
+}
+
+.signup-btn.verify {
+  background: #28a745; /* Green */
+}
+
+.signup-btn.verify:hover {
+  background: #1e7e34;
+}
+
+
+/* this section CSS For Flash Messages */
+.flash-message {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  animation: fadeIn 0.3s ease;
+}
+
+.flash-message.success {
+  background-color: #28a745; /* Green */
+}
+
+.flash-message.error {
+  background-color: #dc3545; /* Red */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
