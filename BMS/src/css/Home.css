@@ -558,6 +558,7 @@
     padding-left: 12px;
     /* Optional – can cause layout shift on very small screens */
     padding-right: 12px;
+    
   }
 
   .Mbanner img {
@@ -569,6 +570,7 @@
     /* Maintains aspect ratio */
     display: block;
     /* Removes inline spacing */
+    border-radius: 8px;
   }
 
 }
@@ -706,3 +708,177 @@
     opacity: 1
   }
 }
+
+
+.mp-wrapper{
+  display: none;
+}
+
+
+/* Mobile view: max width 430px */
+@media screen and (max-width: 430px) {
+  .mp-wrapper{
+    display: block;
+  }
+}
+
+
+
+.mp-wrapper {
+  padding: 16px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.mp-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.mp-subtext {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.mp-highlight {
+  color: #e4002b;
+  font-weight: 600;
+}
+
+/* Card Layout */
+.mp-card {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* Poster */
+.mp-poster-box {
+  position: relative;
+}
+
+.mp-poster {
+  width: 190px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Premiere Badge */
+.mp-premiere-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #e4002b;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Content */
+.mp-content {
+  flex: 1;
+}
+
+.mp-title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 6px;
+   font-family: 'Roboto', sans-serif;
+}
+
+.mp-info {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.mp-description {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.4;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Arrows */
+.mp-arrow {
+  position: absolute;
+  top: 40%;
+  background: rgba(63, 63, 63, 0.55);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-left {
+  left: -18px;
+}
+
+.mp-right {
+  right: -18px;
+}
+
+/* Buy Button */
+.mp-buy-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #e4002b;
+  color: #e4002b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Dots */
+.mp-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mp-dot {
+  width: 6px;
+  height: 6px;
+  background: #cfcfcf;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mp-dot.active {
+  background: #111;
+  transform: scale(1.5);
+}
+
+/* Smooth transition like BookMyShow */
+.mp-card {
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mp-enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mp-exit {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+

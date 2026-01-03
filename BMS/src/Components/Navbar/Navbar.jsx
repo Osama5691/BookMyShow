@@ -7,58 +7,60 @@ import { MdOutlineQrCodeScanner } from "react-icons/md";
 import { useState, useEffect } from "react";
 import SignUp from "../../Pages/SignUp";
 import { account } from "../../appWrite";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ onOpenSignup }) {
   const [user, setUser] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
-  
+
+  const navigate = useNavigate();
 
 
-// fetch Logged in user
+  // fetch Logged in user
   useEffect(() => {
-  account
-    .get()
-    .then((res) => setUser(res))
-    .catch(() => {
-      const guest = localStorage.getItem("guestUser");
-      if (guest) {
-        setUser(JSON.parse(guest)); // ✅ ab Guest user mil jayega
-      } else {
-        setUser(null);
-      }
-    });
-}, []);
+    account
+      .get()
+      .then((res) => setUser(res))
+      .catch(() => {
+        const guest = localStorage.getItem("guestUser");
+        if (guest) {
+          setUser(JSON.parse(guest)); // ✅ ab Guest user mil jayega
+        } else {
+          setUser(null);
+        }
+      });
+  }, []);
 
 
 
 
-async function signOut() {
-  try {
-    // ✅ Clear Appwrite session
-    await account.deleteSession("current").catch(() => {});
+  async function signOut() {
+    try {
+      // ✅ Clear Appwrite session
+      await account.deleteSession("current").catch(() => { });
 
-    // ✅ Clear Guest session
-    localStorage.removeItem("guestUser");
+      // ✅ Clear Guest session
+      localStorage.removeItem("guestUser");
 
-    setUser(null);
-    setShowProfile(false);
+      setUser(null);
+      setShowProfile(false);
 
-    toast.success("You have been signed out!", {
-      position: "top-center",
-      autoClose: 3000,
-    });
+      toast.success("You have been signed out!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 1500);
-  } catch (err) {
-    console.error("Error signing out:", err);
-    toast.error("Failed to sign out. Try again.", {
-      position: "top-center",
-      autoClose: 3000,
-    });
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    } catch (err) {
+      console.error("Error signing out:", err);
+      toast.error("Failed to sign out. Try again.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    }
   }
-}
 
 
 
@@ -67,12 +69,12 @@ async function signOut() {
 
 
   // Function to get first name from email or full name
-const getFirstName = (email, name) => {
-  if (name && name.trim().length > 0) {
-    return name.split(" ")[0];
-  }
-  return email ? email.split("@")[0] : "Guest";
-};
+  const getFirstName = (email, name) => {
+    if (name && name.trim().length > 0) {
+      return name.split(" ")[0];
+    }
+    return email ? email.split("@")[0] : "Guest";
+  };
 
 
 
@@ -103,7 +105,7 @@ const getFirstName = (email, name) => {
                 gap: "8px",
                 cursor: "pointer"
               }}
-              onClick={()=> setShowProfile(true)}   // <-- Open sidebar
+              onClick={() => setShowProfile(true)}   // <-- Open sidebar
 
             >
               <img
@@ -115,9 +117,9 @@ const getFirstName = (email, name) => {
                 style={{ width: "32px", height: "32px", borderRadius: "50%" }}
               />
               <span
-              style={{ width:"90px" , overflow: "hidden" , whiteSpace:"nowrap", textOverflow:"ellipsis" , marginTop:"4px"}}
-              >Hello, {getFirstName(user.email, user.name ,)}</span>
-              
+                style={{ width: "90px", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis", marginTop: "4px" }}
+              >Hello, {getFirstName(user.email, user.name,)}</span>
+
             </div>
           ) : (
             <>
@@ -192,88 +194,90 @@ const getFirstName = (email, name) => {
 
 
 
-     {/* Profile Sidebar .......................*/}
-<div className={`profile-sidebar ${showProfile ? "open" : ""}`}>
-  <div className="profile-header">
-    <div>
-      <h2>Hey!</h2>
-      <p className="edit-profile">Edit Profile &gt;</p>
+      {/* Profile Sidebar .......................*/}
+      <div className={`profile-sidebar ${showProfile ? "open" : ""}`}>
+        <div className="profile-header">
+          <div>
+            <h2>Hey!</h2>
+            <p className="edit-profile" onClick={() =>
+              navigate("/profile-page")
+            }>Edit Profile &gt;</p>
+          </div>
+          <img
+            src={
+              user?.prefs?.avatar ||
+              "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            }
+            alt="Profile Avatar"
+            className="profile-avatar"
+          />
+        </div>
+
+        <ul className="profile-menu">
+          <li>
+            <span className="icon">🔔</span>
+            <div>
+              <h4>Notifications</h4>
+              <p>Stay updated with latest updates</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">📦</span>
+            <div>
+              <h4>Your Orders</h4>
+              <p>View all your bookings & purchases</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">🎬</span>
+            <div>
+              <h4>Stream Library</h4>
+              <p>Rented & Purchased Movies</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">💳</span>
+            <div>
+              <h4>Play Credit Card</h4>
+              <p>View your Play Credit Card details and offers</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">❓</span>
+            <div>
+              <h4>Help & Support</h4>
+              <p>View commonly asked queries and Chat</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">⚙️</span>
+            <div>
+              <h4>Accounts & Settings</h4>
+              <p>Location, Payments, Permissions & More</p>
+            </div>
+          </li>
+          <li>
+            <span className="icon">🎁</span>
+            <div>
+              <h4>Rewards</h4>
+              <p>View your rewards & unlock new ones</p>
+            </div>
+          </li>
+        </ul>
+
+        <button className="signout-btn" onClick={signOut}>Sign out</button>
+      </div>
+
+      {/* Overlay */}
+      {showProfile && (
+        <div className="sidebar-overlay" onClick={() => setShowProfile(false)}></div>
+      )}
+
+
+      <ToastContainer />
+
+
     </div>
-    <img
-      src={
-        user?.prefs?.avatar ||
-        "https://cdn-icons-png.flaticon.com/512/149/149071.png"
-      }
-      alt="Profile Avatar"
-      className="profile-avatar"
-    />
-  </div>
-
-  <ul className="profile-menu">
-    <li>
-      <span className="icon">🔔</span>
-      <div>
-        <h4>Notifications</h4>
-        <p>Stay updated with latest updates</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">📦</span>
-      <div>
-        <h4>Your Orders</h4>
-        <p>View all your bookings & purchases</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">🎬</span>
-      <div>
-        <h4>Stream Library</h4>
-        <p>Rented & Purchased Movies</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">💳</span>
-      <div>
-        <h4>Play Credit Card</h4>
-        <p>View your Play Credit Card details and offers</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">❓</span>
-      <div>
-        <h4>Help & Support</h4>
-        <p>View commonly asked queries and Chat</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">⚙️</span>
-      <div>
-        <h4>Accounts & Settings</h4>
-        <p>Location, Payments, Permissions & More</p>
-      </div>
-    </li>
-    <li>
-      <span className="icon">🎁</span>
-      <div>
-        <h4>Rewards</h4>
-        <p>View your rewards & unlock new ones</p>
-      </div>
-    </li>
-  </ul>
-
-  <button className="signout-btn" onClick={signOut}>Sign out</button>
-</div>
-
-{/* Overlay */}
-{showProfile && (
-  <div className="sidebar-overlay" onClick={() => setShowProfile(false)}></div>
-)}
-
-
-<ToastContainer />
-
-
-</div>
 
   );
 }

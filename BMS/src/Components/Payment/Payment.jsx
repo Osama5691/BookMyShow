@@ -108,7 +108,7 @@ function Payment() {
         let config = {
             method: "post",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/api/orders",
+            url: "http://localhost:5000/api/orders",
             headers: {
                 "content-Type": "application/json",
             },

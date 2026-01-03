@@ -7,6 +7,10 @@ import SkeletonCard from "./Components/SkeletonCard/SkeletonCard";
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+   // 2️⃣ Current movie index
+  const [currentMovie, setCurrentMovie] = useState(0);
+  const [animate, setAnimate] = useState(true);
+
   const navigate = useNavigate();
 
   //   const navigate = useNavigate();
@@ -76,6 +80,78 @@ export default function Home() {
 
 
 
+
+    // 1️⃣ Static movie data (renamed fields)
+  const movieList = [
+    {
+      movieName: "Chainsaw Man - The Movie Reze Arc",
+      duration: "1h 42m",
+      genre: "Action, adventure , Anime, . A    ",
+      language: "Hindi, Japanese",
+      description: "Denji meets Reze, a girl with a dark secret.",
+      poster: "./CS.jpg",
+    },
+    {
+      movieName: "The Running Man",
+      duration: "2h 21m",
+      genre: "Action, Thriller , Scifi . UA16+"  ,
+      language: "English, Hindi",
+      description: "Millions Hunt. One Runs. Everyone Watches. In a near-future society, The Running Man is the top-rated show on television-a deadly competition where contestants, known as Runners, must survive 30 days.",
+      poster: "./RM.jpg",
+    },
+    {
+      movieName: "Christy",
+      duration: "2h 15m",
+      genre: "Biopic , historical , Sports . A",
+      language: "English",
+      description: "The story of Christy Martin, the most successful female boxer of the 90s.",
+      poster: "./Ch.jpg",
+    },
+  ];
+
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setAnimate(false);
+
+    setTimeout(() => {
+      setCurrentMovie((prev) =>
+        prev === movieList.length - 1 ? 0 : prev + 1
+      );
+      setAnimate(true);
+    }, 200);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
+
+
+
+
+ const nextMovie = () => {
+  setAnimate(false);
+  setTimeout(() => {
+    setCurrentMovie((prev) =>
+      prev === movieList.length - 1 ? 0 : prev + 1
+    );
+    setAnimate(true);
+  }, 200);
+};
+
+const prevMovie = () => {
+  setAnimate(false);
+  setTimeout(() => {
+    setCurrentMovie((prev) =>
+      prev === 0 ? movieList.length - 1 : prev - 1
+    );
+    setAnimate(true);
+  }, 200);
+};
+
+
+
+
+
   return (
     <>
 
@@ -116,7 +192,7 @@ export default function Home() {
         </div>
         {/* Mobile Banner .....  */}
         <div className="Mbanner">
-          <img src="MB.png" alt="" />
+          <img src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1766140794945_wickedhttyd656x130.gif" alt="" />
         </div>
       </div>
 
@@ -238,36 +314,61 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile Section .............................................*/}
-          <div className="Mobile-Container">
-            <div className="premiere-container">
-              <h2>Watch Top Movies Online</h2>
-              <p>
-                Buy or Rent movies on <span className="highlight">BMS STREAM</span>
-              </p>
 
-              <div className="premiere-card">
-                {/* Left - Movie Poster */}
-                <div className="poster-wrapper">
-                  <img src="./P1.png" alt="September 5" className="movie-poster" />
-                </div>
 
-                {/* Right - Movie Details */}
-                <div className="details">
-                  <h1>Gladiator II</h1>
-                  <p className="info">
-                    2h 35m · Drama, Action, Adventure, Thriller · 18+ · English, Hindi
-                  </p>
-                  <p className="description">
-                    From legendary director Ridley Scott, Gladiator II continues the epic saga of power, intrigue, and vengeance set in Ancient Rome.
-                  </p>
-                </div>
-              </div>
+         <div className="mp-wrapper">
 
-              <button className="buy-btn">Buy or Rent</button>
-            </div>
-          </div>
-        </div>
+  <h2 className="mp-heading">Watch Top Movies Online</h2>
+  <p className="mp-subtext">
+    Buy or Rent movies on <span className="mp-highlight">BMS STREAM</span>
+  </p>
+
+  {/* Movie Card */}
+  <div className={`mp-card ${animate ? "mp-enter" : "mp-exit"}`}>
+
+
+    <button className="mp-arrow mp-left" onClick={prevMovie}>❮</button>
+
+    <img
+      src={movieList[currentMovie].poster}
+      alt="movie"
+      className="mp-poster"
+    />
+
+    <div className="mp-details">
+      <h3 className="mp-title">
+        {movieList[currentMovie].movieName}
+      </h3>
+
+      <p className="mp-info">
+        {movieList[currentMovie].duration} ·
+        {movieList[currentMovie].genre} ·
+        {movieList[currentMovie].language}
+      </p>
+
+      <p className="mp-description">
+        {movieList[currentMovie].description}
+      </p>
+    </div>
+
+    <button className="mp-arrow mp-right" onClick={nextMovie}>❯</button>
+
+  </div>
+
+  <button className="mp-buy-btn">Buy or Rent</button>
+
+  {/* Dots */}
+  <div className="mp-dots">
+    {movieList.map((_, index) => (
+     <span
+  key={index}
+  className={`mp-dot ${currentMovie === index ? "active" : ""}`}
+  onClick={() => setCurrentMovie(index)}
+></span>
+    ))}
+  </div>
+</div>
+    </div>
         {/* this section ends here........................................................ */}
 
         {/* For music related evnets */}

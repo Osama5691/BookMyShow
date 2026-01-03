@@ -1,4 +1,4 @@
-// App.jsx
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './AuthContext'
 import './App.css'
@@ -15,6 +15,7 @@ import Payment from './Components/Payment/Payment'
 import Tickets from './Components/Tickets/Tickets'
 import SignUp from './Pages/SignUp'
 import { useState } from 'react'
+import Profile from './Pages/Profile'
 
 function App() {
   const [showSignup, setShowSignup] = useState(false);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/confirm-booking" element={<Snacks />} />
           <Route path='/payment-page' element={<Payment />} />
           <Route path='/ticket-page' element={<Tickets />} />
+          <Route path='/profile-page' element={<><Profile /> <Footer/></>} />
 
         </Routes>
         {/* ✅ Global SignUp modal */}
@@ -52,13 +54,14 @@ function App() {
     // <div>
     //   {/* <Navbar/> */}
     //   {/* <BookingPage/> */}
-    //   {/* <Footer/> */}
     //   {/* <SelectSeatNav/> */}
     //   {/* <BookingSummary/> */}
     //   {/* <Snacks/> */}
     //   {/* <Payment/> */}
     //   {/* <Tickets /> */}
-    //   <SignUp/>
+    //   {/* <SignUp/> */}
+    //   {/* <Profile/> */}
+    //    {/* <Footer/> */}
     // </div>
   )
 }

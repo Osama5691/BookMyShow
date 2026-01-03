@@ -1,5 +1,5 @@
 import "../css/SignUp.css";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import { account, ID } from "../appWrite";
 
 const SignUp = ({ onClose }) => {
@@ -12,13 +12,32 @@ const SignUp = ({ onClose }) => {
 
 
   // Google login handler
-  const handleGoogleLogin = () => {
-    account.createOAuth2Session(
-      "google", // Provider
-      window.location.origin, // Success redirect (homepage)
-      window.location.origin  // Failure redirect
+ const handleGoogleLogin = async () => {
+  try {
+    await account.createOAuth2Session(
+      "google",
+      window.location.origin, // success redirect
+      window.location.origin  // failure redirect
     );
-  };
+
+    // ✅ Login ke baad Appwrite se user fetch kar
+    const user = await account.get();
+
+    // ✅ user info localStorage me save kar
+    localStorage.setItem("guestUser", JSON.stringify({
+      name: user.name || "Google User",
+      email: user.email,
+      avatar: user.prefs?.avatar || "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+    }));
+
+    // ✅ Toast dikhane ke liye reload ya manually update
+    localStorage.removeItem("toastShown"); // taki toast dikh sake
+    window.location.reload();
+
+  } catch (err) {
+    console.error("Google login error:", err);
+  }
+};
 
 
   // ✅ Auto hide flash after 3s
@@ -72,6 +91,11 @@ const SignUp = ({ onClose }) => {
           phone: `+91${phone}`
         }));
 
+        if (typeof onLoginSuccess === "function") {
+          onLoginSuccess();
+        }
+
+        
         onClose(); // ✅ signup modal close kar do
         setTimeout(() => window.location.reload(), 1500); // reload after showing flash
       } else {
